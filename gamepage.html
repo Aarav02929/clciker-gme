@@ -6,21 +6,25 @@
     <title>Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-100">
-    <h1 class="text-4xl font-bold text-center mb-8">Game Page</h1>
+  <body
+    class="bg-gradient-to-r from-blue-500 to-purple-600 text-white min-h-screen flex flex-col items-center"
+  >
+    <header class="text-center">
+      <h1 class="text-5xl font-extrabold mt-12 mb-8">Clicker Game</h1>
+      <p class="text-2xl font-semibold mb-8">
+        Get ready to click your way to victory!
+      </p>
+    </header>
     <script src="app.js"></script>
-    <span class="title text-4xl font-bold text-center block mb-8"
-      >Clicker Game</span
-    >
-    <p class="text-center text-2xl font-bold mb-4">
-      <span id="click-count" class="text-4xl">0</span>
+    <p class="text-3xl font-bold mb-6">
+      <span id="click-count" class="text-5xl">0</span>
     </p>
-    <div class="flex justify-center mb-4">
+    <div class="flex justify-center mb-6 space-x-4">
       <button
         id="clicker"
         onclick="clicked()"
         title="Click Me"
-        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 active:scale-95 hover:scale-105 mr-2"
+        class="bg-green-500 text-white px-6 py-3 rounded-full shadow-lg transform transition-transform hover:scale-110 active:scale-95"
       >
         CLICK ME
       </button>
@@ -28,24 +32,24 @@
         id="reset"
         onclick="reset()"
         title="Reset"
-        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 active:scale-95 hover:scale-105"
+        class="bg-red-500 text-white px-6 py-3 rounded-full shadow-lg transform transition-transform hover:scale-110 active:scale-95"
       >
         RESET
       </button>
     </div>
 
-    <div class="flex justify-center space-x-4">
-      <div class="dropdown relative inline-block text-center">
+    <div class="flex justify-center space-x-8 mb-6">
+      <div class="relative">
         <button
           id="shop-click"
           title="Shop Click"
-          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
+          class="bg-yellow-500 text-white px-6 py-3 rounded-full shadow-lg transition-transform hover:scale-110"
           onclick="document.querySelector('.dropdown-click').classList.toggle('hidden')"
         >
           SHOP-CLICK
         </button>
         <div
-          class="dropdown-click hidden absolute left-0 mt-2 bg-white shadow rounded z-10 w-40"
+          class="dropdown-click hidden absolute left-0 mt-2 bg-white text-black shadow-lg rounded w-48"
         >
           <a
             href="#"
@@ -74,17 +78,17 @@
         </div>
       </div>
 
-      <div class="dropdown relative inline-block text-center">
+      <div class="relative">
         <button
           id="shop-auto"
           title="Shop Auto"
-          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
+          class="bg-yellow-500 text-white px-6 py-3 rounded-full shadow-lg transition-transform hover:scale-110"
           onclick="document.querySelector('.dropdown-auto').classList.toggle('hidden')"
         >
           SHOP-AUTO
         </button>
         <div
-          class="dropdown-auto hidden absolute left-0 mt-2 bg-white shadow rounded z-10 w-40"
+          class="dropdown-auto hidden absolute left-0 mt-2 bg-white text-black shadow-lg rounded w-48"
         >
           <a
             href="#"
@@ -114,10 +118,10 @@
       </div>
     </div>
     <div
-      class="flex justify-center mt-8 p-4 mt-5 border-2 border-gray-300 rounded-full ml-5 mr-5 bg-white shadow-lg"
+      class="bg-white text-black rounded-full shadow-lg p-4 mt-6 mx-8 hover:scale-95"
     >
       <p id="username" class="text-center">
-        Username: <span id="username-display">-</span>
+        Username: <span id="username-display" class="font-bold">-</span>
       </p>
     </div>
     <script>
@@ -125,12 +129,12 @@
       document.getElementById("username-display").textContent = username || "-";
     </script>
 
-    <div class="index-back flex justify-center mt-8">
+    <div class="flex justify-center space-x-4 mt-8">
       <button
         id="back"
         onclick="window.location.href='username.html'"
         title="Back"
-        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 mr-2"
+        class="bg-gray-700 text-white px-6 py-3 rounded-full shadow-lg transition-transform hover:scale-110"
       >
         Back
       </button>
@@ -138,7 +142,7 @@
         id="back"
         onclick="window.location.href='score.html'"
         title="Score"
-        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+        class="bg-gray-700 text-white px-6 py-3 rounded-full shadow-lg transition duration-1000 ease-in-out hover:scale-110"
       >
         Score
       </button>

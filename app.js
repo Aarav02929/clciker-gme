@@ -15,7 +15,7 @@ function clicked() {
 }
 function reset() {
   clickCount = 0;
-  window.location.href = `index.html`;
+  window.location.href = `gamepage.html`;
   document.querySelector("#click-count").innerHTML = clickCount;
   document.querySelector("#clicker").innerHTML = "CLICK ME";
   document.querySelector("#clicker").onclick = function () {
