@@ -13,14 +13,14 @@
       >Clicker Game</span
     >
     <p class="text-center text-2xl font-bold mb-4">
-      <span id="click-count">0</span>
+      <span id="click-count" class="text-4xl">0</span>
     </p>
     <div class="flex justify-center mb-4">
       <button
         id="clicker"
         onclick="clicked()"
         title="Click Me"
-        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 active:scale-95 hover:scale-105"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 active:scale-95 hover:scale-105 mr-2"
       >
         CLICK ME
       </button>
@@ -28,118 +28,94 @@
         id="reset"
         onclick="reset()"
         title="Reset"
-        class="bg-red-500 text-white px-4 py-2 ml-2 rounded hover:bg-red-700 active:scale-95 hover:scale-105"
+        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 active:scale-95 hover:scale-105"
       >
         RESET
       </button>
     </div>
-    <div class="dropdown relative inline-block text-center">
-      <button
-        id="shop"
-        title="Shop Click"
-        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
-      >
-        SHOP-CLICK
-      </button>
-      <div
-        class="dropdown-content absolute hidden bg-white shadow rounded mt-2"
-      >
-        <a
-          href="#"
-          onclick="upgradeC1()"
-          title="Upgrade 1 cost: 20"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 1 cost: 20</a
+
+    <div class="flex justify-center space-x-4">
+      <div class="dropdown relative inline-block text-center">
+        <button
+          id="shop-click"
+          title="Shop Click"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
+          onclick="document.querySelector('.dropdown-click').classList.toggle('hidden')"
         >
-        <a
-          href="#"
-          onclick="upgradeC2()"
-          title="Upgrade 2 cost: 50"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 2 cost: 50</a
+          SHOP-CLICK
+        </button>
+        <div
+          class="dropdown-click hidden absolute left-0 mt-2 bg-white shadow rounded z-10 w-40"
         >
-        <a
-          href="#"
-          onclick="upgradeC3()"
-          title="Upgrade 3 cost: 100"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 3 cost: 100</a
+          <a
+            href="#"
+            onclick="upgradeC1()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 1 cost: 20</a
+          >
+          <a
+            href="#"
+            onclick="upgradeC2()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 2 cost: 50</a
+          >
+          <a
+            href="#"
+            onclick="upgradeC3()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 3 cost: 100</a
+          >
+          <a
+            href="#"
+            onclick="upgradeC4()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 4 cost: 200</a
+          >
+        </div>
+      </div>
+
+      <div class="dropdown relative inline-block text-center">
+        <button
+          id="shop-auto"
+          title="Shop Auto"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
+          onclick="document.querySelector('.dropdown-auto').classList.toggle('hidden')"
         >
-        <a
-          href="#"
-          onclick="upgradeC4()"
-          title="Upgrade 4 cost: 200"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 4 cost: 200</a
+          SHOP-AUTO
+        </button>
+        <div
+          class="dropdown-auto hidden absolute left-0 mt-2 bg-white shadow rounded z-10 w-40"
         >
+          <a
+            href="#"
+            onclick="upgradeA1()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 1 cost: 100</a
+          >
+          <a
+            href="#"
+            onclick="upgradeA2()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 2 cost: 200</a
+          >
+          <a
+            href="#"
+            onclick="upgradeA3()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 3 cost: 500</a
+          >
+          <a
+            href="#"
+            onclick="upgradeA4()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 4 cost: 1000</a
+          >
+        </div>
       </div>
     </div>
-    <div class="dropdown relative inline-block text-center mt-4">
-      <button
-        id="shop"
-        title="Shop Auto"
-        class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
-      >
-        SHOP-AUTO
-      </button>
-      <div
-        class="dropdown-content absolute hidden bg-white shadow rounded mt-2"
-      >
-        <a
-          href="#"
-          onclick="upgradeA1()"
-          title="Upgrade 1 cost: 100"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 1 cost: 100</a
-        >
-        <a
-          href="#"
-          onclick="upgradeA2()"
-          title="Upgrade 2 cost: 200"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 2 cost: 200</a
-        >
-        <a
-          href="#"
-          onclick="upgradeA3()"
-          title="Upgrade 3 cost: 500"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 3 cost: 500</a
-        >
-        <a
-          href="#"
-          onclick="upgradeA4()"
-          title="Upgrade 4 cost: 1000"
-          class="block px-4 py-2 hover:bg-gray-200"
-          >Upgrade 4 cost: 1000</a
-        >
-      </div>
-    </div>
-    <div class="container mx-auto mt-8 p-4 border rounded bg-white shadow">
-      <div class="upgrade-info mb-4">
-        <p class="upgrade-info-text text-lg text-center">
-          Upgrade 1: Click multiplier x2
-        </p>
-        <p class="upgrade-info-text text-lg text-center">
-          Upgrade 2: Click multiplier x3
-        </p>
-        <p class="upgrade-info-text text-lg text-center">
-          Upgrade 3: Click multiplier x4
-        </p>
-        <p class="upgrade-info-text text-lg text-center">
-          Upgrade 4: Auto-click every second
-        </p>
-      </div>
-      <div class="leaderboard mb-4">
-        <p class="leaderboard-title text-lg text-center underline">
-          Leaderboard
-        </p>
-        <p class="leaderboard-item text-center">1. John Doe - 1300 clicks</p>
-        <p class="leaderboard-item text-center">
-          2. Jane Catherine - 1000 clicks
-        </p>
-        <p class="leaderboard-item text-center">3. Jim Attwood - 800 clicks</p>
-      </div>
+    <div
+      class="flex justify-center mt-8 p-4 mt-5 border-2 border-gray-300 rounded-full ml-5 mr-5 bg-white shadow-lg"
+    >
       <p id="username" class="text-center">
         Username: <span id="username-display">-</span>
       </p>
@@ -148,6 +124,7 @@
       const username = getCookie("username");
       document.getElementById("username-display").textContent = username || "-";
     </script>
+
     <div class="index-back flex justify-center mt-8">
       <button
         id="back"
