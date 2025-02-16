@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <h1 class="text-4xl font-bold text-center mb-8">Game Page</h1>
+    <script src="app.js"></script>
+    <span class="title text-4xl font-bold text-center block mb-8"
+      >Clicker Game</span
+    >
+    <p class="text-center text-2xl font-bold mb-4">
+      <span id="click-count" class="text-4xl">0</span>
+    </p>
+    <div class="flex justify-center mb-4">
+      <button
+        id="clicker"
+        onclick="clicked()"
+        title="Click Me"
+        class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 active:scale-95 hover:scale-105 mr-2"
+      >
+        CLICK ME
+      </button>
+      <button
+        id="reset"
+        onclick="reset()"
+        title="Reset"
+        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700 active:scale-95 hover:scale-105"
+      >
+        RESET
+      </button>
+    </div>
+
+    <div class="flex justify-center space-x-4">
+      <div class="dropdown relative inline-block text-center">
+        <button
+          id="shop-click"
+          title="Shop Click"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
+          onclick="document.querySelector('.dropdown-click').classList.toggle('hidden')"
+        >
+          SHOP-CLICK
+        </button>
+        <div
+          class="dropdown-click hidden absolute left-0 mt-2 bg-white shadow rounded z-10 w-40"
+        >
+          <a
+            href="#"
+            onclick="upgradeC1()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 1 cost: 20</a
+          >
+          <a
+            href="#"
+            onclick="upgradeC2()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 2 cost: 50</a
+          >
+          <a
+            href="#"
+            onclick="upgradeC3()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 3 cost: 100</a
+          >
+          <a
+            href="#"
+            onclick="upgradeC4()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 4 cost: 200</a
+          >
+        </div>
+      </div>
+
+      <div class="dropdown relative inline-block text-center">
+        <button
+          id="shop-auto"
+          title="Shop Auto"
+          class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700 active:scale-95 hover:scale-105"
+          onclick="document.querySelector('.dropdown-auto').classList.toggle('hidden')"
+        >
+          SHOP-AUTO
+        </button>
+        <div
+          class="dropdown-auto hidden absolute left-0 mt-2 bg-white shadow rounded z-10 w-40"
+        >
+          <a
+            href="#"
+            onclick="upgradeA1()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 1 cost: 100</a
+          >
+          <a
+            href="#"
+            onclick="upgradeA2()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 2 cost: 200</a
+          >
+          <a
+            href="#"
+            onclick="upgradeA3()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 3 cost: 500</a
+          >
+          <a
+            href="#"
+            onclick="upgradeA4()"
+            class="block px-4 py-2 hover:bg-gray-200"
+            >Upgrade 4 cost: 1000</a
+          >
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center mt-8 p-4 mt-5 border-2 border-gray-300 rounded-full ml-5 mr-5 bg-white shadow-lg"
+    >
+      <p id="username" class="text-center">
+        Username: <span id="username-display">-</span>
+      </p>
+    </div>
+    <script>
+      const username = getCookie("username");
+      document.getElementById("username-display").textContent = username || "-";
+    </script>
+
+    <div class="index-back flex justify-center mt-8">
+      <button
+        id="back"
+        onclick="window.location.href='username.html'"
+        title="Back"
+        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 mr-2"
+      >
+        Back
+      </button>
+      <button
+        id="back"
+        onclick="window.location.href='score.html'"
+        title="Score"
+        class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+      >
+        Score
+      </button>
+    </div>
+  </body>
+</html>
