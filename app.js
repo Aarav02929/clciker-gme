@@ -1,5 +1,5 @@
-var clickCount = 0;
-var upgrade4Active = false;
+let clickCount = 0;
+let upgrade4Active = false;
 let boughtC1 = 0;
 let boughtC2 = 0;
 let boughtC3 = 0;
