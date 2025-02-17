@@ -35,7 +35,7 @@ function upgradeC1() {
   } else if (clickCount >= 20) {
     clickCount -= 20;
     document.querySelector("#click-count").innerHTML = clickCount;
-    document.querySelector("#clicker").innerHTML = "CLICK ME x2";
+    document.querySelector("#clicker").innerHTML = "CLICK ME +2";
     document.querySelector("#clicker").onclick = function () {
       clicked();
       clicked();
@@ -53,7 +53,7 @@ function upgradeC2() {
   } else if (clickCount >= 50) {
     clickCount -= 50;
     document.querySelector("#click-count").innerHTML = clickCount;
-    document.querySelector("#clicker").innerHTML = "CLICK ME x3";
+    document.querySelector("#clicker").innerHTML = "CLICK ME +3";
     document.querySelector("#clicker").onclick = function () {
       clicked();
       clicked();
@@ -72,7 +72,7 @@ function upgradeC3() {
   } else if (clickCount >= 100) {
     clickCount -= 100;
     document.querySelector("#click-count").innerHTML = clickCount;
-    document.querySelector("#clicker").innerHTML = "CLICK ME x4";
+    document.querySelector("#clicker").innerHTML = "CLICK ME +4";
     document.querySelector("#clicker").onclick = function () {
       clicked();
       clicked();
@@ -90,7 +90,7 @@ function upgradeC4() {
   if (clickCount >= 200) {
     clickCount -= 200;
     document.querySelector("#click-count").innerHTML = clickCount;
-    document.querySelector("#clicker").innerHTML = "CLICK ME x5";
+    document.querySelector("#clicker").innerHTML = "CLICK ME +5";
     document.querySelector("#clicker").onclick = function () {
       clicked();
       clicked();
